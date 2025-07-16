@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Download, ArrowDown } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import Link from "next/link";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -78,10 +79,12 @@ const Hero = () => {
               Get In Touch
             </Button>
             {personalInfo.resume && (
-              <Button variant="outline" size="lg" className="min-w-[150px]">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
+              <Link href="/CV.pdf" download="Musab_CV.pdf">
+                <Button variant="outline" size="lg" className="min-w-[150px]">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </Link>
             )}
           </motion.div>
 

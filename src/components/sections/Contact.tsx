@@ -55,8 +55,8 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      value: contactInfo.phone || "+1 (555) 123-4567",
-      href: `tel:${contactInfo.phone || "+15551234567"}`,
+      value: contactInfo.phone || "+252 61 9122271",
+      href: `tel:${contactInfo.phone || "+252 61 9122271"}`,
       description: "Give me a call",
     },
     {
