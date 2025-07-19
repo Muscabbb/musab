@@ -48,47 +48,41 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
+    title: "University Event Management System",
     description:
-      "A full-stack e-commerce platform built with Next.js, featuring user authentication, payment integration, and admin dashboard.",
-    image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "React", "MongoDB", "Stripe", "Tailwind CSS"],
-    liveUrl: "https://ecommerce-demo.com",
-    githubUrl: "https://github.com/musab/ecommerce-platform",
+      "A comprehensive event management system for universities, featuring event creation, registration, scheduling, and administrative tools for managing campus events.",
+    image: "/projects/eventMS.PNG",
+    technologies: [
+      "React",
+      "Vite.js",
+      "MongoDB",
+      "Prisma",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+    ],
+    liveUrl: "https://jutsa.reliatrusty.com/",
+    githubUrl: "https://github.com/Muscabbb/Jutsa-Management-System",
     featured: true,
   },
   {
     id: "2",
-    title: "Task Management App",
+    title: "Hekto - Clothes & Accessories E-commerce",
     description:
-      "A collaborative task management application with real-time updates, built using React and Node.js.",
-    image: "/projects/taskmanager.jpg",
-    technologies: ["React", "Node.js", "Express", "MySQL", "Socket.io"],
-    liveUrl: "https://taskmanager-demo.com",
-    githubUrl: "https://github.com/musab/task-manager",
-    featured: true,
-  },
-  {
-    id: "3",
-    title: "Weather Dashboard",
-    description:
-      "A responsive weather dashboard that displays current weather and forecasts for multiple cities.",
-    image: "/projects/weather.jpg",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Weather API"],
-    liveUrl: "https://weather-dashboard-demo.com",
-    githubUrl: "https://github.com/musab/weather-dashboard",
+      "A modern e-commerce platform for clothes and accessories featuring advanced product search engine, user authentication, and seamless shopping experience.",
+    image: "/projects/hekto.PNG",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "MongoDB",
+      "Python",
+      "FastAPI",
+      "Tailwind CSS",
+    ],
+    liveUrl: "https://hekto-ruddy.vercel.app/",
+    githubUrl: "https://github.com/Muscabbb/hekto",
     featured: false,
-  },
-  {
-    id: "4",
-    title: "Blog Platform",
-    description:
-      "A modern blog platform with markdown support, SEO optimization, and content management system.",
-    image: "/projects/blog.jpg",
-    technologies: ["Next.js", "Prisma", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://blog-platform-demo.com",
-    githubUrl: "https://github.com/musab/blog-platform",
-    featured: true,
   },
 ];
 
@@ -122,9 +116,9 @@ export const experience: Experience[] = [
 export const education: Education[] = [
   {
     id: "1",
-    institution: "University of Technology",
+    institution: "Jamhuriya University of Technology",
     degree: "Bachelor of Science in Computer Science",
-    duration: "2016 - 2020",
+    duration: "2021 - 2025",
     description: "Focused on software engineering and web development",
   },
 ];
