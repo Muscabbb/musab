@@ -12,19 +12,23 @@ import Link from 'next/link';
 
 const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
 
   const ProjectCard = ({ project, featured = false }: { project: Project; featured?: boolean }) => {
     return (
       <Card className={`group hover:shadow-lg transition-all duration-300 ${featured ? 'border-primary/20' : ''}`}>
         <CardHeader className="p-0">
           <div className="relative overflow-hidden rounded-t-lg">
-            <div className="aspect-video bg-muted flex items-center justify-center">
-              {/* Placeholder for project image */}
-              <div className="text-muted-foreground text-sm">Project Image</div>
+            <div className="aspect-video relative">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             {featured && (
-              <div className="absolute top-3 right-3">
+              <div className="absolute top-3 right-3 z-10">
                 <Badge className="bg-primary/90 text-primary-foreground">
                   <Star className="w-3 h-3 mr-1" />
                   Featured
@@ -109,16 +113,15 @@ const Projects = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">My Projects</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Here are some of my recent projects that showcase my skills and experience.
             </p>
           </motion.div>
 
-          {/* Featured Projects */}
+          {/* Projects */}
           {featuredProjects.length > 0 && (
             <motion.div variants={itemVariants} className="space-y-8">
-              <h3 className="text-2xl font-semibold text-center">Featured Work</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {featuredProjects.map((project) => (
                   <motion.div
@@ -128,25 +131,6 @@ const Projects = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <ProjectCard project={project} featured={true} />
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
-          {/* Other Projects */}
-          {otherProjects.length > 0 && (
-            <motion.div variants={itemVariants} className="space-y-8">
-              <h3 className="text-2xl font-semibold text-center">Other Projects</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {otherProjects.map((project) => (
-                  <motion.div
-                    key={project.id}
-                    variants={itemVariants}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ProjectCard project={project} />
                   </motion.div>
                 ))}
               </div>
