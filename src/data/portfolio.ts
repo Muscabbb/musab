@@ -51,7 +51,7 @@ export const projects: Project[] = [
     title: "University Event Management System",
     description:
       "A comprehensive event management system for universities, featuring event creation, registration, scheduling, and administrative tools for managing campus events.",
-    image: "/projects/eventMS.PNG",
+    image: "/public/projects/eventMS.PNG",
     technologies: [
       "React",
       "Vite.js",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     title: "Hekto - Clothes & Accessories E-commerce",
     description:
       "A modern e-commerce platform for clothes and accessories featuring advanced product search engine, user authentication, and seamless shopping experience.",
-    image: "/projects/hekto.PNG",
+    image: "/public/projects/hekto.PNG",
     technologies: [
       "Next.js",
       "TypeScript",
