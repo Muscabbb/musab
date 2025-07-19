@@ -1,21 +1,31 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Star } from 'lucide-react';
-import { projects } from '@/data/portfolio';
-import { Project } from '@/types';
-import Image from 'next/image';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github, Star } from "lucide-react";
+import { projects } from "@/data/portfolio";
+import { Project } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
 
 const Projects = () => {
-  const featuredProjects = projects.filter(project => project.featured);
+  const featuredProjects = projects.filter((project) => project.featured);
 
-  const ProjectCard = ({ project, featured = false }: { project: Project; featured?: boolean }) => {
+  const ProjectCard = ({
+    project,
+    featured = false,
+  }: {
+    project: Project;
+    featured?: boolean;
+  }) => {
     return (
-      <Card className={`group hover:shadow-lg transition-all duration-300 ${featured ? 'border-primary/20' : ''}`}>
+      <Card
+        className={`group hover:shadow-lg transition-all duration-300 ${
+          featured ? "border-primary/20" : ""
+        }`}
+      >
         <CardHeader className="p-0">
           <div className="relative overflow-hidden rounded-t-lg">
             <div className="aspect-video relative">
@@ -23,6 +33,7 @@ const Projects = () => {
                 src={project.image}
                 alt={project.title}
                 fill
+                unoptimized={true}
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
@@ -59,7 +70,11 @@ const Projects = () => {
           {/* Links */}
           <div className="flex gap-3 pt-2">
             {project.liveUrl && (
-              <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="sm" className="flex-1">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Live Demo
@@ -67,7 +82,11 @@ const Projects = () => {
               </Link>
             )}
             {project.githubUrl && (
-              <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button variant="outline" size="sm" className="flex-1">
                   <Github className="w-4 h-4 mr-2" />
                   Code
@@ -85,9 +104,9 @@ const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -96,9 +115,9 @@ const Projects = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   return (
@@ -115,7 +134,8 @@ const Projects = () => {
           <motion.div variants={itemVariants} className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">My Projects</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Here are some of my recent projects that showcase my skills and experience.
+              Here are some of my recent projects that showcase my skills and
+              experience.
             </p>
           </motion.div>
 
@@ -138,12 +158,19 @@ const Projects = () => {
           )}
 
           {/* Call to Action */}
-          <motion.div variants={itemVariants} className="text-center space-y-4 pt-8">
+          <motion.div
+            variants={itemVariants}
+            className="text-center space-y-4 pt-8"
+          >
             <h3 className="text-xl font-semibold">Want to see more?</h3>
             <p className="text-muted-foreground">
               Check out my GitHub for more projects and contributions.
             </p>
-            <Link href="https://github.com/musab" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/musab"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="outline" size="lg">
                 <Github className="w-5 h-5 mr-2" />
                 View All Projects
