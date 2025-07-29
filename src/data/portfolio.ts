@@ -84,7 +84,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://hekto-ruddy.vercel.app/",
     githubUrl: "https://github.com/Muscabbb/hekto",
-    featured: true,
+    featured: false,
   },
 ];
 
