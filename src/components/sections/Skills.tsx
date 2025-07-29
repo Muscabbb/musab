@@ -134,42 +134,17 @@ const Skills = () => {
                 "Webpack",
                 "Vite",
                 "Jest",
-                "Cypress",
                 "Docker",
                 "AWS",
                 "Vercel",
                 "Netlify",
-                "Figma",
-                "Adobe XD",
                 "Postman",
-                "VS Code",
               ].map((tech) => (
                 <Badge key={tech} variant="outline" className="px-3 py-1">
                   {tech}
                 </Badge>
               ))}
             </div>
-          </motion.div>
-
-          {/* Learning */}
-          <motion.div
-            variants={itemVariants}
-            className="text-center space-y-4 pt-8 border-t"
-          >
-            <h3 className="text-xl font-semibold">Currently Learning</h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {["Python", "Django", "React Native", "Three.js", "WebGL"].map(
-                (tech) => (
-                  <Badge key={tech} variant="secondary" className="px-3 py-1">
-                    {tech}
-                  </Badge>
-                )
-              )}
-            </div>
-            <p className="text-sm text-muted-foreground">
-              {"I'm"} always expanding my skillset and staying up-to-date with
-              the latest technologies.
-            </p>
           </motion.div>
         </motion.div>
       </div>

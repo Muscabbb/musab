@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code, Database, Globe, Users } from "lucide-react";
-import { personalInfo } from "@/data/portfolio";
 
 const About = () => {
   const highlights = [
@@ -147,35 +146,6 @@ const About = () => {
               })}
             </motion.div>
           </div>
-
-          {/* Stats */}
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t"
-          >
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">3+</div>
-              <div className="text-sm text-muted-foreground">
-                Years Experience
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">20+</div>
-              <div className="text-sm text-muted-foreground">
-                Projects Completed
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">10+</div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">
-                Client Satisfaction
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

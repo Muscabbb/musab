@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useNotification } from "@/components/ui/notification-provider";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { contactInfo } from "@/data/portfolio";
 import Link from "next/link";
@@ -18,7 +19,7 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const { showNotification } = useNotification();
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -30,18 +31,48 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
+      const data = await response.json();
 
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setIsSubmitting(false);
-
-    // Show success message (you could use a toast library here)
-    alert("Message sent successfully!");
+      if (response.ok) {
+        // Reset form
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        
+        // Show professional success notification
+        showNotification(
+          'success',
+          'Message Sent Successfully! 🎉',
+          'Thank you for reaching out! I\'ll get back to you as soon as possible.',
+          6000
+        );
+      } else {
+        // Show professional error notification
+        showNotification(
+          'error',
+          'Failed to Send Message',
+          data.error || 'Something went wrong. Please try again or contact me directly.',
+          5000
+        );
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      showNotification(
+        'error',
+        'Connection Error',
+        'Please check your internet connection and try again.',
+        5000
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
