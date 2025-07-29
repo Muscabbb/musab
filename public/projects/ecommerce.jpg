@@ -1,9 +1,0 @@
-<svg width="400" height="225" viewBox="0 0 400 225" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="225" fill="#1f2937"/>
-  <rect x="50" y="50" width="300" height="125" rx="8" fill="#374151"/>
-  <rect x="70" y="70" width="60" height="60" rx="4" fill="#6b7280"/>
-  <rect x="150" y="70" width="180" height="8" rx="4" fill="#9ca3af"/>
-  <rect x="150" y="90" width="120" height="6" rx="3" fill="#6b7280"/>
-  <rect x="150" y="110" width="80" height="20" rx="10" fill="#3b82f6"/>
-  <text x="200" y="195" text-anchor="middle" fill="#9ca3af" font-family="Arial" font-size="14">E-Commerce Platform</text>
-</svg>
