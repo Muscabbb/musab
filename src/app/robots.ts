@@ -1,14 +1,14 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://musab-portfolio.vercel.app' // Replace with your actual domain
+  const baseUrl = "https://muscab.me"; // Replace with your actual domain
 
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/private/',
+      userAgent: "*",
+      allow: "/",
+      disallow: "/private/",
     },
     sitemap: `${baseUrl}/sitemap.xml`,
-  }
+  };
 }

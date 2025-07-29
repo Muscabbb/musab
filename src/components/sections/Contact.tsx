@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useNotification } from "@/components/ui/notification-provider";
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github } from "lucide-react";
 import { contactInfo } from "@/data/portfolio";
 import Link from "next/link";
 
@@ -32,10 +32,10 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -45,29 +45,30 @@ const Contact = () => {
       if (response.ok) {
         // Reset form
         setFormData({ name: "", email: "", subject: "", message: "" });
-        
+
         // Show professional success notification
         showNotification(
-          'success',
-          'Message Sent Successfully! 🎉',
-          'Thank you for reaching out! I\'ll get back to you as soon as possible.',
+          "success",
+          "Message Sent Successfully! 🎉",
+          "Thank you for reaching out! I'll get back to you as soon as possible.",
           6000
         );
       } else {
         // Show professional error notification
         showNotification(
-          'error',
-          'Failed to Send Message',
-          data.error || 'Something went wrong. Please try again or contact me directly.',
+          "error",
+          "Failed to Send Message",
+          data.error ||
+            "Something went wrong. Please try again or contact me directly.",
           5000
         );
       }
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       showNotification(
-        'error',
-        'Connection Error',
-        'Please check your internet connection and try again.',
+        "error",
+        "Connection Error",
+        "Please check your internet connection and try again.",
         5000
       );
     } finally {
@@ -213,7 +214,7 @@ const Contact = () => {
                       </Button>
                     </Link>
                   )}
-                  {contactInfo.linkedin && (
+                  {/* {contactInfo.linkedin && (
                     <Link
                       href={contactInfo.linkedin}
                       target="_blank"
@@ -223,7 +224,7 @@ const Contact = () => {
                         <Linkedin className="w-5 h-5" />
                       </Button>
                     </Link>
-                  )}
+                  )} */}
                 </div>
               </div>
             </motion.div>

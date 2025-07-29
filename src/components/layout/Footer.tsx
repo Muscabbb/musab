@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Mail, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo, contactInfo } from "@/data/portfolio";
 
@@ -92,7 +92,7 @@ const Footer = () => {
                   </Button>
                 </Link>
               )}
-              {contactInfo.linkedin && (
+              {/* {contactInfo.linkedin && (
                 <Link
                   href={contactInfo.linkedin}
                   target="_blank"
@@ -102,7 +102,7 @@ const Footer = () => {
                     <Linkedin className="h-4 w-4" />
                   </Button>
                 </Link>
-              )}
+              )} */}
               <Link href={`mailto:${contactInfo.email}`}>
                 <Button variant="ghost" size="icon">
                   <Mail className="h-4 w-4" />
