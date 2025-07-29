@@ -167,7 +167,7 @@ const Projects = () => {
               Check out my GitHub for more projects and contributions.
             </p>
             <Link
-              href="https://github.com/musab"
+              href="https://github.com/Muscabbb"
               target="_blank"
               rel="noopener noreferrer"
             >
