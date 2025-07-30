@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://jutsa.reliatrusty.com/",
     githubUrl: "https://github.com/Muscabbb/Jutsa-Management-System",
-    featured: true,
+    featured: false,
   },
   {
     id: "2",
