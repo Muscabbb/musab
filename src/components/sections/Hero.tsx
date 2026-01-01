@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 import { Download, ArrowDown } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -30,12 +31,14 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="flex justify-center"
           >
-            <Avatar className="w-32 h-32 border-4 border-primary/20">
-              <AvatarImage src={personalInfo.avatar} alt={personalInfo.name} />
-              <AvatarFallback className="text-4xl font-bold">
-                {personalInfo.name.charAt(0)}
-              </AvatarFallback>
-            </Avatar>
+            <Image
+              src="https://sutta7ix17.ufs.sh/f/m8ZBLSTuDwTHdAZEhdmg0hruiY87B3aslWCSOIPJ4XMbpGno"
+              alt={personalInfo.name}
+              className="w-32 h-32 rounded-full border-4 border-primary/20 object-cover"
+              loading="lazy"
+              width={128}
+              height={128}
+            />
           </motion.div>
 
           {/* Name and Title */}
