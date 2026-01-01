@@ -7,8 +7,18 @@ import { Download, ArrowDown } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Hero = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const scrollToAbout = () => {
     document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -31,14 +41,38 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="flex justify-center"
           >
-            <Image
-              src="https://sutta7ix17.ufs.sh/f/m8ZBLSTuDwTHdAZEhdmg0hruiY87B3aslWCSOIPJ4XMbpGno"
-              alt={personalInfo.name}
-              className="w-32 h-32 rounded-full border-4 border-primary/20 object-cover"
-              loading="lazy"
-              width={128}
-              height={128}
-            />
+            <Dialog>
+              <DialogTrigger asChild>
+                <div className="relative cursor-pointer group">
+                  {!isImageLoaded && (
+                    <Skeleton className="w-32 h-32 rounded-full absolute inset-0 border-4 border-primary/20" />
+                  )}
+                  <Image
+                    src="https://sutta7ix17.ufs.sh/f/m8ZBLSTuDwTHdAZEhdmg0hruiY87B3aslWCSOIPJ4XMbpGno"
+                    unoptimized
+                    alt={personalInfo.name}
+                    className={`w-32 h-32 rounded-full border-4 border-primary/20 object-cover transition-opacity duration-300 group-hover:opacity-80 ${
+                      isImageLoaded ? "opacity-100" : "opacity-0"
+                    }`}
+                    onLoad={() => setIsImageLoaded(true)}
+                    width={128}
+                    height={128}
+                  />
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full p-0 border-none bg-transparent shadow-none flex flex-col justify-center items-center">
+                <DialogTitle className="sr-only">Profile Picture</DialogTitle>
+                  <div className="relative w-[300px] h-[300px] sm:w-[500px] sm:h-[500px]">
+                  <Image
+                    src="https://sutta7ix17.ufs.sh/f/m8ZBLSTuDwTHdAZEhdmg0hruiY87B3aslWCSOIPJ4XMbpGno"
+                    alt={personalInfo.name}
+                    fill
+                    className="object-contain rounded-lg"
+                    unoptimized
+                  />
+                </div>
+              </DialogContent>
+            </Dialog>
           </motion.div>
 
           {/* Name and Title */}
