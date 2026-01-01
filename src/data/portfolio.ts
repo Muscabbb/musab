@@ -16,7 +16,7 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const contactInfo: ContactInfo = {
-  email: "muscabinho367@gmail.com",
+  email: "musabmahaad@gmail.com",
   phone: "+252 61 9122271",
   location: "Mogadishu.Somalia",
   linkedin: "https://linkedin.com/in/musab",
