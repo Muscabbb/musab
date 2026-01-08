@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { useNotification } from "@/components/ui/notification-provider";
 import { Mail, Phone, MapPin, Send, Github } from "lucide-react";
 import { contactInfo } from "@/data/portfolio";
@@ -122,7 +123,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="relative py-20 bg-muted/30">
+      <SectionBackground variant="default" showGrid showOrbs showAccent={false} />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

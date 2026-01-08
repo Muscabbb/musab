@@ -112,15 +112,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} {personalInfo.name}. All rights reserved.
-          </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1 mt-2 md:mt-0">
-            Made with <Heart className="h-4 w-4 text-red-500" /> using Next.js &
-            Tailwind CSS
-          </p>
-        </div>
+
       </div>
     </footer>
   );

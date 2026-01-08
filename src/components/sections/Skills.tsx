@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { Monitor, Server, Globe } from "lucide-react";
 import { skills } from "@/data/portfolio";
 import { Skill } from "@/types";
@@ -71,7 +72,8 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="relative py-20">
+      <SectionBackground variant="default" showGrid={false} showOrbs showAccent={false} />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

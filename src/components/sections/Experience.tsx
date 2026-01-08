@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { experience, education } from "@/data/portfolio";
@@ -109,7 +110,8 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="relative py-20">
+      <SectionBackground variant="transparent" showGrid showOrbs showAccent={false} />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

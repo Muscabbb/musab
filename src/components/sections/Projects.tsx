@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { ExternalLink, Github, Star } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { Project } from "@/types";
@@ -121,7 +122,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="relative py-20 bg-muted/30">
+      <SectionBackground variant="muted" showGrid showOrbs showAccent={false} />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

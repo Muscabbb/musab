@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 import { Code, Database, Globe, Users } from "lucide-react";
 
 const About = () => {
@@ -55,7 +56,8 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="relative py-20 bg-muted/30">
+      <SectionBackground variant="muted" showGrid showOrbs showAccent={false} />
       <div className="container mx-auto px-4">
         <motion.div
           initial="hidden"

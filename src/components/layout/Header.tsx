@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
 import { personalInfo, contactInfo } from "@/data/portfolio";
 
@@ -48,7 +49,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Social Links */}
+          {/* Social Links & Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             {contactInfo.github && (
               <Link
@@ -73,6 +74,7 @@ const Header = () => {
                 <Mail className="h-5 w-5" />
               </Button>
             </Link>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -131,6 +133,7 @@ const Header = () => {
                     <Mail className="h-5 w-5" />
                   </Button>
                 </Link>
+                <ThemeToggle />
               </div>
             </div>
           </nav>
